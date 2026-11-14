@@ -1,0 +1,50 @@
+{
+  "name": "dsh-research",
+  "version": "0.1.0",
+  "private": true,
+  "description": "动手前先上网查社区：右上角维护资料站点清单，未查阅就改文件/跑命令会被拦一次。纯插件实现，不依赖任何外部程序。",
+  "meta": {
+    "title": "资料网",
+    "description": "动手前先上网查社区：右上角维护资料站点清单，未查阅就改文件/跑命令会被拦一次。纯插件实现，不依赖任何外部程序。"
+  },
+  "type": "module",
+  "main": "lib/host.js",
+  "exports": {
+    ".": {
+      "default": "./lib/host.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "slots"
+      ],
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "files": [
+    "lib",
+    "locale",
+    "cordis.patch.yml",
+    "README.md",
+    "icon.svg"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "research",
+    "web-search"
+  ],
+  "license": "MIT"
+}

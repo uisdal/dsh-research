@@ -1,0 +1,15 @@
+# dsh-research —— bundle 自己的补丁层
+# 只负责把插件本体的 host 行插进来；不碰 profile 的 package.json。
+#
+# 可调项：
+#   enabled       总开关。false = 闸门完全不起作用（出问题时的逃生口）
+#   windowMinutes 多久之内算"查过"
+#   maxBlocks     同一 agent 最多拦几次，超过就放行
+#   file          站点文件路径，留空 = ~/.dsh/research/sites.json
+- insert:
+    - id: research
+      name: 'dsh-research'
+      config:
+        enabled: true
+        windowMinutes: 15
+        maxBlocks: 2
