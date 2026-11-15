@@ -3,3 +3,6 @@ node_modules/
 *.zip
 _backup*/
 .DS_Store
+*.bak-*
+*.broken*
+*.failed*
